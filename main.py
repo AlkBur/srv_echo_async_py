@@ -1,7 +1,7 @@
 import asyncore
 import socket
 
-# Server - асинхронный echo сервер
+# Server
 class Server(asyncore.dispatcher):
     def __init__(self, host, port):
         asyncore.dispatcher.__init__(self)
@@ -19,7 +19,7 @@ class Server(asyncore.dispatcher):
             print 'Connection by', address
             EchoHandler(socket)
 
-# EchoHandler - Обработка полученных данных
+# EchoHandler
 class EchoHandler(asyncore.dispatcher_with_send):
     # dispatcher_with_send extends the basic dispatcher to have an output
     # buffer that it writes whenever there's content
